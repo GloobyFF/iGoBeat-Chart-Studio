@@ -1,0 +1,32 @@
+name: Verify release assets
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag
+        required: true
+        default: v0.17.0
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download public assets and verify hashes
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+          REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PYTHON'
+          import os,json,urllib.request,pathlib,shutil
+          tag=os.environ['RELEASE_TAG']
+          if not tag.startswith('v') or any(c not in 'v0123456789.-' for c in tag):
+              raise ValueError('Unexpected release tag')
+          url='https://api.github.com/repos/'+os.environ['REPO']+'/releases/tags/'+tag
+          with urllib.request.urlopen(url) as f: release=json.load(f)
+          for a in release['assets']:
+              if a['name'].endswith('.zip') or a['name']=='SHA256SUMS.txt':
+                  with urllib.request.urlopen(a['browser_download_url']) as src, pathlib.Path(a['name']).open('wb') as dst:
+                      shutil.copyfileobj(src,dst)
+          PYTHON
+          sha256sum -c SHA256SUMS.txt
