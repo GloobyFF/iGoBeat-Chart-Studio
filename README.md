@@ -1,12 +1,12 @@
 # iGoBeat Chart Studio
 
-独立 Mac 曲谱编辑器 · 0.17.1 测试版
+独立 Mac 曲谱编辑器 · 0.17.2 测试版
 
 ![应用图标](docs/editor-help-assets/icon.png)
 
-[下载安装包](https://github.com/GloobyFF/iGoBeat-Chart-Studio/releases/tag/v0.17.1) · [图文使用指南](docs/EditerHelp.html) · [网站帮助](https://www.igobeat.com/EditerHelp.html)
+[下载安装包](https://github.com/GloobyFF/iGoBeat-Chart-Studio/releases/tag/v0.17.2) · [图文使用指南](docs/EditerHelp.html) · [网站帮助](https://www.igobeat.com/EditerHelp.html)
 
-## 0.17.1 更新
+## 0.17.2 更新
 
 - 修复分轨试听，播放实际人声、鼓、低音或其他伴奏；切换保留播放位置、速度与状态。
 - 保存 .igb 时携带压缩试听分轨，重新打开或换 Mac 可继续试听。
@@ -14,7 +14,7 @@
 
 ## 安装
 
-支持 Apple Silicon（M1 或更新）及 macOS 14+。下载 Release 中的 `iGoBeat-Chart-Studio-0.17.1-macOS-arm64.zip`，解压后把 `Distribution/iGoBeat Chart Studio.app` 拖入应用程序，双击启动。不需要安装 Xcode 或 Python。
+支持 Apple Silicon（M1 或更新）及 macOS 14+。下载 Release 中的 `iGoBeat-Chart-Studio-0.17.2-macOS-arm64.zip`，解压后把 `Distribution/iGoBeat Chart Studio.app` 拖入应用程序，双击启动。不需要安装 Xcode 或 Python。
 
 本版是 ad-hoc 签名、尚未 Developer ID 公证的测试版本。如被 macOS 拦截，核对来源后在“系统设置 → 隐私与安全性”选择“仍要打开”。不要关闭系统安全保护。暂不提供 Intel、Windows 或 iPhone 版安装包。
 
