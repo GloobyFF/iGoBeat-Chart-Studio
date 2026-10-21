@@ -1,20 +1,25 @@
 # iGoBeat Chart Studio
 
-独立 Mac 曲谱编辑器 · 0.17.2 测试版
+独立 Mac 曲谱编辑器 · 0.19.2 测试版
 
 ![应用图标](docs/editor-help-assets/icon.png)
 
-[下载安装包](https://github.com/GloobyFF/iGoBeat-Chart-Studio/releases/tag/v0.17.2) · [图文使用指南](docs/EditerHelp.html) · [网站帮助](https://www.igobeat.com/EditerHelp.html)
+[下载安装包](https://github.com/GloobyFF/iGoBeat-Chart-Studio/releases/tag/v0.19.2) · [图文使用指南](docs/EditerHelp.html) · [网站帮助](https://www.igobeat.com/EditerHelp.html)
 
-## 0.17.2 更新
+## 0.19.2 更新
 
-- 修复分轨试听，播放实际人声、鼓、低音或其他伴奏；切换保留播放位置、速度与状态。
-- 保存 .igb 时携带压缩试听分轨，重新打开或换 Mac 可继续试听。
-- 缺失、过期或损坏的分轨会明确提示，不再静默播放原曲。
+- 新增 Beat Saber 独立工作台：单首或批量扫描，按已认可规则制作 Quad、Hex、Piano、Fall 四种玩法，共 11 张难度谱；保存原谱与设计报告。
+- Quad → Hex 使用当前原滑动优先规则，可调滑动保留方式、新增比例、长按、奖励与落点设计；支持对应难度批量转换、预览和撤销。
+- 曲谱作者默认 iGoBeat，手动修改后长期记住。
+- 新滑动默认 5 帧，可选 3／4／5 帧；原谱保留路径不改原间隔。
+- 修复密集 Hex 排布失败，以及编辑器辅助 BPM 数据造成的打击时间偏移。
+- 修复 Beat Saber 工作台成品在 iPhone／iPad 导入时的时长字段格式错误；失败详情可展开，并保存错误日志。
+
+[工作台详细说明](docs/WORKBENCH.md)。此前生成的错误时长曲包需要重新保存或制作；已安装的手机游戏无需更新。
 
 ## 安装
 
-支持 Apple Silicon（M1 或更新）及 macOS 14+。下载 Release 中的 `iGoBeat-Chart-Studio-0.17.2-macOS-arm64.zip`，解压后把 `Distribution/iGoBeat Chart Studio.app` 拖入应用程序，双击启动。不需要安装 Xcode 或 Python。
+支持 Apple Silicon（M1 或更新）及 macOS 14+。下载 Release 中的 `iGoBeat-Chart-Studio-0.19.2-macOS-arm64.zip`，解压后把 `Distribution/iGoBeat Chart Studio.app` 拖入应用程序，双击启动。不需要安装 Xcode 或 Python。
 
 本版是 ad-hoc 签名、尚未 Developer ID 公证的测试版本。如被 macOS 拦截，核对来源后在“系统设置 → 隐私与安全性”选择“仍要打开”。不要关闭系统安全保护。暂不提供 Intel、Windows 或 iPhone 版安装包。
 
@@ -45,4 +50,4 @@
 
 网站上传包 `EditerHelp-website.zip`：将 `EditerHelp.html` 与 `editor-help-assets` 一起上传网站根目录。正式网站由维护者另行上传，GitHub 发布不等于网站已更新。
 
-本次验证：分发 App 的 20 项分轨试听检查、24 项文档保存/放弃检查通过；ZIP 完整性和签名通过，运行时依赖已重新检查。未在另一台物理 Mac 上验收，也未做 Apple 公证。
+本次验证：32 项制谱与导入回归、工作台导出格式回归通过；真实歌曲 11 张谱面通过游戏原生解析、内嵌运行时一致性和完整游戏导入检查。分发 ZIP 完整性、版本与签名检查通过。未逐首真机听审，也未做 Apple 公证。
